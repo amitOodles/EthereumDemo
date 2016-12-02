@@ -36,18 +36,18 @@ var myTokenObject = myTokenContract.new(10000,{from:eth.accounts[0], data: myTok
 
         // console.log(contract);
         // console.log(eth.getCode(greeter.address));
-       	 console.log(myTokenObject.myBalance("alas"));
-        // var caller=myTokenContract.at(contract.address);
+       	 // console.log(myTokenObject.myBalance("alas"));
+        var caller=myTokenContract.at(contract.address);
 
-        // caller.myBalance("alas",,{from:eth.accounts[0]}function(err,objValue){
-        // 	if(err){
-        // 		console.log("error: ",err);
-        // 	}
-        // 	else{
-        // 		console.log("data: ",objValue);
+        caller.myBalance("alas",{from:eth.accounts[0]},function(err,objValue){
+        	if(err){
+        		console.log("error: ",err);
+        	}
+        	else{
+        		console.log("data: ",objValue);
 
-        // 	}
-        // });
+        	}
+        });
       }
 
     }else{
